@@ -1,0 +1,38 @@
+{
+  "manifest_version": 3,
+  "name": "ABHA-highlighter",
+  "version": "1.0",
+  "description": "Help user to highlight important text on webpages",
+  "icons": {
+    "16": "images/icon.png",
+    "32": "images/icon.png",
+    "48": "images/icon.png",
+    "128": "images/icon.png"
+  },
+  "action": {
+    "default_popup": "popup/popup.html",
+    "javascript": ["popup/popup.js"]
+  },
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "storage"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*/*"
+      ],
+      "js": [
+        "content.js"
+      ]
+    }
+  ],
+  "commands": {
+    "_execute_action": {
+      "suggested_key": {
+        "default": "Alt+H"
+      }
+    }
+  }
+}
